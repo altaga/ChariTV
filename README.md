@@ -124,20 +124,22 @@ Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/header.
                 'Accept': 'application/json'
             }
         })
+        // Get Only NFTs Tokens
         temp = temp.data.data.items.filter(item => item.type === "nft");
-
+        // Get Only Contracts
         temp = temp.map(item => {
             return ({
                 contractAddress: item.contract_address
             })
         })
-
+        // Setup Contract and Get the data from Blockchain
         let provider = new ethers.providers.JsonRpcProvider(`https://polygon-mainnet.g.alchemy.com/v2/${process.env.REACT_APP_Alchemy}`);
         temp.forEach((item) => {
             if (item.contractAddress !== "") {
                 contractsNFT.push(new ethers.Contract(item.contractAddress, abi2(), provider))
             }
         })
+        // Get the Metadata for All the NFTs
         let res = []
         for (let i = 0; i < contractsNFT.length; i++) {
             try {
@@ -152,6 +154,7 @@ Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/header.
                 // nothing
             }
         }
+        // Setup NFTs to state
         if (this.state.nfts.length !== res.length) {
             this.setState({
                 nfts: res
@@ -210,12 +213,14 @@ Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/chat.js
 
     connectSub() {
         this.socketSub = new WebSocket(`${process.env.REACT_APP_StreamrWSS}/streams/${encodeURIComponent("0x905d45128f4ae35e2a5ea7b0210f8fa9a4f101d5/ChariTV")}/subscribe?apiKey=${process.env.REACT_APP_StreamrAPI}`)
+        // Setup Flag on Connect
         this.socketSub.addEventListener('open', () => {
             this.setState({
                 readySub: true
             })
         })
         this.socketSub.addEventListener('message', (message) => {
+            // Recieve All NO DMs messages
             if (!(JSON.parse(message.data).dm)) {
                 let temp = this.state.history
                 // Filter Duplicates
@@ -230,6 +235,7 @@ Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/chat.js
                     history: temp
                 })
             }
+            // Push notification for new DM message
             if (JSON.parse(message.data).dm && this.context.value.address !== "" && this.context.value.address === JSON.parse(message.data).to && !this.state.dm) {
                 let temp = this.context.value.chatNotif
                 temp.push(JSON.parse(message.data))
@@ -239,6 +245,7 @@ Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/chat.js
                 this.audio.play()
             }
         })
+        // Try to reconnect every 5 seconds
         this.socketSub.addEventListener('close', () => {
             this.setState({
                 readySub: false
@@ -250,12 +257,14 @@ Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/chat.js
     }
 
     connectPub() {
+        // Setup Flag on Connect
         this.socketPub = new WebSocket(`${process.env.REACT_APP_StreamrWSS}/streams/${encodeURIComponent("0x905d45128f4ae35e2a5ea7b0210f8fa9a4f101d5/ChariTV")}/publish?apiKey=${process.env.REACT_APP_StreamrAPI}`)
         this.socketPub.addEventListener('open', () => {
             this.setState({
                 readyPub: true
             })
         })
+        // Try to reconnect every 5 seconds
         this.socketPub.addEventListener('close', () => {
             this.connectPub()
             this.setState({
@@ -277,10 +286,13 @@ Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/chat.js
 Este servicio tiene 3 partes fundamentales, realizar un sign in, obtener el historial de conversacion y los mensajes entrantes nuevos.
 
     async startDM(address) {
+        // Setup Metamask as provider
         const provider = new ethers.providers.Web3Provider(window.ethereum, "any")
+        // Create new Client
         const xmtp = await Client.create(provider.getSigner())
         // It is very important that the Address is correctly written with ChecksumAddress, otherwise XMTP will not work.
         this.conversation = await xmtp.conversations.newConversation(this.web3.utils.toChecksumAddress(address))
+        // Get all history
         const messages = await this.conversation.messages()
         let tempMessages = []
         messages.forEach((item, index) => {
@@ -298,6 +310,7 @@ Este servicio tiene 3 partes fundamentales, realizar un sign in, obtener el hist
         // Listen for new messages in the this.conversation
         const account = this.web3.utils.toChecksumAddress(address)
         for await (const message of await this.conversation.streamMessages()) {
+            // Break if dm account change
             if (account !== this.web3.utils.toChecksumAddress(address)) {
                 console.log("Break:" + account)
                 break
@@ -317,6 +330,7 @@ Este servicio tiene 3 partes fundamentales, realizar un sign in, obtener el hist
 
 Por ultimo para mandar mensajes nuevos a la otra addres ocuparemos la siguiente linea de codigo.
 
+    // Send New message
     async sendMessageXMTP() {
         let tempMes = this.state.message
         this.socketPub.send(JSON.stringify({
