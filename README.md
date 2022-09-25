@@ -171,7 +171,7 @@ Una vez configurado el nodo y configurar los puertos correspondientes en nuestro
 
 Ahora un ultimo reto que tenemos que resolver es como consumir el WebSocket en un ambiente de produccion, ya que el WebSocket que hemos creado funciona sin un certificado SSL, asi que tendremos dos opciones, instalarle un certificado al server o realizar un tunnel desde el servidor a una URL segura, tomando la ventaja que el nodo puede correr mediante un contenedor de docker, me parecio mas sensato usar un orquestador de contenedores para manejar ambos servicios en el server facilmente.
 
-Files: 
+Docker Compose Files: https://github.com/altaga/ChariTV/tree/main/StreamrDockerCompose
 
     version: '3.1'
     services:
