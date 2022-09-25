@@ -1,0 +1,17 @@
+{
+    "$schema": "http://schema.streamr.network/config-v1.schema.json",
+    "client": {
+        "auth": {
+            "privateKey": "0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+    },
+    "plugins": {
+        "metrics": {},
+        "websocket": {}
+    },
+    "apiAuthentication": {
+        "keys": [
+            "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+version: '3.1'
+services:
+  streamr:
+    image: streamr/broker-node:latest
+    networks:
+      - my-net
+    volumes:
+      - /home/ubuntu/streamrfiles:/root/.streamr
+
+  ngrox:
+    image: ngrok/ngrok:latest
+    entrypoint: ngrok http streamr:7170
+    networks:
+      - my-net
+    environment:
+      NGROK_AUTHTOKEN: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    depends_on:
+    - streamr
+
+networks:
+  my-net:
+    driver: bridge

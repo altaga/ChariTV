@@ -36,7 +36,6 @@ class Streamers extends Component {
             headers: myHeaders,
             redirect: 'follow'
         };
-
         fetch("https://livepeer.com/api/stream?streamsonly=1", requestOptions)
             .then(response => response.text())
             .then(async (result) => {
