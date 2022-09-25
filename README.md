@@ -22,7 +22,7 @@ Use Polygon Mainnet on Metamask Wallet!!!!
 
 NOTA: Si van a realizar una donacion de prueba recuerden modificar la cantidad de gas en Metamask a Low, Medium or High, sino la transaccion funcionara.
 
-<img src="https://i.ibb.co/NsWRtQH/New-Project.png">
+<img src="https://i.ibb.co/K7dYJP4/New-Project-2.png">
 
 # Introduction and Problem
 
