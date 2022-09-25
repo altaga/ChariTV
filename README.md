@@ -20,6 +20,10 @@ Use Polygon Mainnet on Metamask Wallet!!!!
 
 - Follow: https://academy.binance.com/en/articles/how-to-add-polygon-to-metamask
 
+NOTA: Si van a realizar una donacion de prueba recuerden modificar la cantidad de gas en Metamask a Low, Medium or High, sino la transaccion funcionara.
+
+<img src="https://i.ibb.co/NsWRtQH/New-Project.png">
+
 # Introduction and Problem
 
 
