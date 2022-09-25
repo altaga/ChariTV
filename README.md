@@ -8,7 +8,7 @@ ChariTV Description
 
 # Watch our demo video:
 
-<img src="https://i.ibb.co/j3DCtPZ/image.png" >
+[![Demo](https://i.ibb.co/j3DCtPZ/image.png)](https://www.youtube.com/watch?v=igEGP1Jwgl0)
 
 # Test the product:
 
