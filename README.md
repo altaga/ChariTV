@@ -343,7 +343,7 @@ Finally, to send new messages to the other address, we will use the following li
 
 ## Livepeer:
 
-All the streaming services was done through Livepeer.
+All the streaming services were done through Livepeer.
 
 <img src="https://i.ibb.co/xCvBMz7/Livepeer-drawio.png">
 
