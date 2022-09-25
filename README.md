@@ -24,13 +24,6 @@ NOTE: If you are going to make a test donation, remember to modify the amount of
 
 <img src="https://i.ibb.co/K7dYJP4/New-Project-2.png">
 
-# Introduction and Problem
-
-
-
-# Our Solution:
-
-Description
 
 # Diagram:
 
