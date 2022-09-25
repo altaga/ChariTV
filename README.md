@@ -1,4 +1,4 @@
-NOTE: If you are going to make a test donation, remember to modify the amount of gas in Metamask to Low, Medium or High, otherwise the transaction will work.# ChariTV
+# ChariTV
 
 <img src="https://i.ibb.co/x2GcDdk/logo.png" >
 
