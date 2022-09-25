@@ -1,4 +1,4 @@
-# ChariTV
+NOTE: If you are going to make a test donation, remember to modify the amount of gas in Metamask to Low, Medium or High, otherwise the transaction will work.# ChariTV
 
 <img src="https://i.ibb.co/x2GcDdk/logo.png" >
 
@@ -20,7 +20,7 @@ Use Polygon Mainnet on Metamask Wallet!!!!
 
 - Follow: https://academy.binance.com/en/articles/how-to-add-polygon-to-metamask
 
-NOTA: Si van a realizar una donacion de prueba recuerden modificar la cantidad de gas en Metamask a Low, Medium or High, sino la transaccion funcionara.
+NOTE: If you are going to make a test donation, remember to modify the amount of gas in Metamask to Low, Medium or High, otherwise the transaction will work.
 
 <img src="https://i.ibb.co/K7dYJP4/New-Project-2.png">
 
@@ -50,31 +50,31 @@ Description
     - NFT SmartContract: 
       - https://github.com/altaga/ChariTV/blob/main/WebPage/src/contracts/nftContract.js
 - Covalent:
-  - Obtaining account MATIC Balance.
-  - Obtaining account NFTs Balances.
+  - Obtaining the account's MATIC Balance.
+  - Obtaining the account's NFT Balances.
   - We get the contracts from the NFTs.
 - Streamr Network:
   - Websocket Service:
     - Publish:
-      - Mandar mensajes al chat general
+      - Send messages to the general chat
     - Subscribe:
-      - Recibir los mensajes del chat general
-      - Recibir notificaciones de DM.
+      - Receive general chat messages
+      - Receive DM notifications.
     - Streamr Node:
       - https://streamr.network/network-explorer/nodes/0x905d45128f4ae35e2a5ea7b0210f8fa9a4f101d5%23ca258d52-2abf-4dc2-b9cf-dfdeed921e121
     - Streamr streams:
       - https://streamr.network/network-explorer/streams/0x905d45128f4ae35e2a5ea7b0210f8fa9a4f101d5%2FChariTV
 - XMTP:
   - XMTP Client:
-    - Sign in para autenticacion a la conversacion privada.
-    - Mandar mensajes directos a travez de un chat privado.
-    - Obtener el historial de mensajes con la misma cuenta.
+    - Sign in for authentication to the private conversation.
+    - Send direct messages through a private chat.
+    - Get message history with the same account.
 - Livepeer:
   - RTMP URL:
-    - Url para transmitir facilmente desde el OBS y empezar nuestra transmision.
+    - Url to easily transmit from the OBS and start our transmission.
   - Livestreams and Recordings API:
-    - Obtencion de el url si un streamr esta en live.
-    - Obtencion del ultimo record de cada streamer si esta offline.
+    - Obtaining the url if a streamr is live.
+    - Obtaining the last record of each streamer if he is offline.
 
 # How it's built:
 
@@ -84,13 +84,13 @@ Description
 
 The Polygon network was used to deploy all the contracts, both the contracts of all the NFTs and the main donations contract, in this case it was designed for its speed and low fees, making it easily scalable to carry out an effective charity campaigns.
 
-El contrato de donaciones nos permite generar un contrato que junta todo el dinero donado en si mismo, realiza un registro de cada uno de los donantes y finalmente tranferir todo el dinero recolectado a el public address de la campaña.
+The donations contract allows us to generate a contract that gathers all the donated money itself, makes a record of each of the donors and finally transfers all the money collected to the public address of the campaign.
 
 Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/contracts/charity.js
 
 <img src="https://i.ibb.co/vVVHWpS/image.png">
 
-En el caso de los NFTs estos son repartidos despues del streaming, tomando en cuenta las donaciones realizadas y la cantidad.
+In the case of NFTs, these are distributed after streaming, taking into account the donations made and the amount.
 
 Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/contracts/nftContract.js
 
@@ -166,17 +166,17 @@ Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/header.
 
 <img src="https://i.ibb.co/Y3rx6r6/image.png" >
 
-Para poder realizar nuestro Websocket de Streamr en nuestro chat en vivo tuvimos que primero configurar un Servidor en AWS como Nodo en la red de Streamr Network, como pueden ver en el siguiente URL ese es nuestro nodo.
+In order to make our Streamr Websocket in our live chat we had to first configure a Server in AWS as a Node in the Streamr Network, as you can see in the following URL that is our node.
 
 https://streamr.network/network-explorer/nodes/0x905d45128f4ae35e2a5ea7b0210f8fa9a4f101d5%23ca258d52-2abf-4dc2-b9cf-dfdeed921e121
 
 Node Docs: https://streamr.network/docs/streamr-network/installing-broker-node
 
-Una vez configurado el nodo y configurar los puertos correspondientes en nuestro server obtendremos un WebSocket que podremos consumir en nuestra app, sin embargo aun tendremos que crear el Stream en https://streamr.network/core/streams/ sino al tratar de publicar en el websocket no funcionara.
+Once the node is configured and the corresponding ports are configured in our server we will obtain a WebSocket that we can consume in our app, however we will still have to create the Stream in https://streamr.network/core/streams/ otherwise when trying to publish in the websocket will not work.
 
 <img src="https://i.ibb.co/wCGqYm7/image.png" >
 
-Ahora un ultimo reto que tenemos que resolver es como consumir el WebSocket en un ambiente de produccion, ya que el WebSocket que hemos creado funciona sin un certificado SSL, asi que tendremos dos opciones, instalarle un certificado al server o realizar un tunnel desde el servidor a una URL segura, tomando la ventaja que el nodo puede correr mediante un contenedor de docker, me parecio mas sensato usar un orquestador de contenedores para manejar ambos servicios en el server facilmente.
+Now one last challenge that we have to solve is how to consume the WebSocket in a production environment, since the WebSocket that we have created works without an SSL certificate, so we will have two options, install a certificate to the server or perform a tunnel from the server to a secure URL, taking advantage of the fact that the node can run via a docker container, it seemed more sensible to use a container orchestrator to manage both services on the server easily.
 
 Docker Compose Files: https://github.com/altaga/ChariTV/tree/main/StreamrDockerCompose
 
@@ -203,11 +203,11 @@ Docker Compose Files: https://github.com/altaga/ChariTV/tree/main/StreamrDockerC
     my-net:
         driver: bridge
 
-Resumiendo, el primer servicio es el Broker Node de Streamr Network, el servicio para realizar el tunel seguro es Ngrok y ambos estan conectados a la misma red dentro del orquestador.
+In short, the first service is the Streamr Network Broker Node, the service to perform the secure tunnel is Ngrok and both are connected to the same network within the orchestrator.
 
 <img src="https://i.ibb.co/M6kc1ww/dockercompose-drawio.png" >
 
-Dentro de nuestra app el codigo que recibe y manda los mensajes al chat es el siguinte.
+Within our app the code that receives and sends the messages to the chat is the following.
 
 Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/chat.js
 
@@ -279,11 +279,11 @@ Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/chat.js
 
 <img src="https://i.ibb.co/hDCgc3S/image.png" >
 
-Debido a que nuestra app requiere un servicio confiable para realizar un chat privado se decidio incluir el Client de XMTP para realizar los mensajes privados entre donadores.
+Because our app requires a reliable service to carry out a private chat, it was decided to include the XMTP Client to carry out private messages between donors.
 
 Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/chat.js
 
-Este servicio tiene 3 partes fundamentales, realizar un sign in, obtener el historial de conversacion y los mensajes entrantes nuevos.
+This service has 3 fundamental parts, sign in, get the conversation history and new incoming messages.
 
     async startDM(address) {
         // Setup Metamask as provider
@@ -328,7 +328,7 @@ Este servicio tiene 3 partes fundamentales, realizar un sign in, obtener el hist
         }
     }
 
-Por ultimo para mandar mensajes nuevos a la otra addres ocuparemos la siguiente linea de codigo.
+Finally, to send new messages to the other address, we will use the following line of code.
 
     // Send New message
     async sendMessageXMTP() {
@@ -362,7 +362,7 @@ Thanks to the Livepeer APIs it was possible for us to obtain if the Streamers we
 
 <img src="https://i.ibb.co/8crFxr5/screen2.png">
 
-La seccion de codigo que nos permite obtener los perfiles, grabaciones y estados (live u offline) es la siguiente.
+The section of code that allows us to obtain the profiles, recordings and states (live or offline) is the following.
 
 Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/pages/main.js
 
