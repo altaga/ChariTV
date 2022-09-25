@@ -82,15 +82,15 @@ The Polygon network was used to deploy all the contracts, both the contracts of 
 
 El contrato de donaciones nos permite generar un contrato que junta todo el dinero donado en si mismo, realiza un registro de cada uno de los donantes y finalmente tranferir todo el dinero recolectado a el public address de la campaña.
 
-<img src="https://i.ibb.co/vVVHWpS/image.png">
+Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/contracts/charity.js
 
-https://github.com/altaga/ChariTV/blob/main/WebPage/src/contracts/charity.js
+<img src="https://i.ibb.co/vVVHWpS/image.png">
 
 En el caso de los NFTs estos son repartidos despues del streaming, tomando en cuenta las donaciones realizadas y la cantidad.
 
-<img src="https://i.ibb.co/Lztyvq1/image.png">
+Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/contracts/nftContract.js
 
-https://github.com/altaga/ChariTV/blob/main/WebPage/src/contracts/nftContract.js
+<img src="https://i.ibb.co/Lztyvq1/image.png">
 
 ## Covalent:
 
