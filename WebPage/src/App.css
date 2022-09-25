@@ -1,0 +1,18 @@
+html {
+    background-color: #0E0E10;
+}
+
+
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hideScrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hideScrollbar::-webkit-scrollbar {
+    display: none;
+}
