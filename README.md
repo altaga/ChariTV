@@ -91,7 +91,7 @@ Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/contracts/nftContr
 
 ## Covalent:
 
-<img src="https://i.ibb.co/b7Lzv2p/Image.png" >
+<img src="https://i.ibb.co/bX0ZJ86/Image.png" >
 
 Our application by requiring that we quickly look up the balance of our Contract and in turn if it has NFT's in it, we were able to find a way to do it efficiently from the Covalent API's.
 
@@ -167,7 +167,7 @@ Node Docs: https://streamr.network/docs/streamr-network/installing-broker-node
 
 Once the node is configured and the corresponding ports are configured in our server we will obtain a WebSocket that we can consume in our app, however we will still have to create the Stream in https://streamr.network/core/streams/ otherwise when trying to publish in the websocket will not work.
 
-<img src="https://i.ibb.co/wCGqYm7/image.png" >
+<img src="https://i.ibb.co/2FgbQk0/Image.png" >
 
 Now one last challenge that we have to solve is how to consume the WebSocket in a production environment, since the WebSocket that we have created works without an SSL certificate, so we will have two options, install a certificate to the server or perform a tunnel from the server to a secure URL, taking advantage of the fact that the node can run via a docker container, it seemed more sensible to use a container orchestrator to manage both services on the server easily.
 
