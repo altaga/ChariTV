@@ -353,7 +353,7 @@ To manage Streamers, the profiles of each of the Streamers were created within t
 
 Thanks to the Livepeer APIs it was possible for us to obtain if the Streamers were doing a Live, thanks to this the viewers could always be aware when a live stream is made.
 
-<img src="https://i.ibb.co/8crFxr5/screen2.png">
+<img src="https://i.ibb.co/XFwyXST/Screen2.png">
 
 The section of code that allows us to obtain the profiles, recordings and states (live or offline) is the following.
 
