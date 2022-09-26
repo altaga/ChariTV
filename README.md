@@ -349,7 +349,7 @@ All the streaming services were done through Livepeer.
 
 To manage Streamers, the profiles of each of the Streamers were created within the Livepeer dashboard, with which we were able to provide each Streamer with their keys to perform their Streams.
 
-<img src="https://i.ibb.co/J72qtkv/screen6.png">
+<img src="https://i.ibb.co/cQQwWmP/Screen6.png">
 
 Thanks to the Livepeer APIs it was possible for us to obtain if the Streamers were doing a Live, thanks to this the viewers could always be aware when a live stream is made.
 
