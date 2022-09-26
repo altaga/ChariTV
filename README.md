@@ -343,7 +343,7 @@ Finally, to send new messages to the other address, we will use the following li
 
 ## Livepeer:
 
-<img src="https://i.ibb.co/pf527Tc/image.png" >
+<img src="https://i.ibb.co/pf527Tc/image.png">
 
 All the streaming services were done through Livepeer.
 
