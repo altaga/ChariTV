@@ -270,7 +270,7 @@ Code: https://github.com/altaga/ChariTV/blob/main/WebPage/src/components/chat.js
 
 ## XMTP:
 
-<img src="https://i.ibb.co/hDCgc3S/image.png" >
+<img src="https://i.ibb.co/xgfjVFY/Image.png" >
 
 Because our app requires a reliable service to carry out a private chat, it was decided to include the XMTP Client to carry out private messages between donors.
 
